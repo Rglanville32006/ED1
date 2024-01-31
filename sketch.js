@@ -1,35 +1,50 @@
 
 
-let gif; 
-
-function preload() {
-gif = loadImage ('assets/GIFtransparent.gif');
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  fill('grey');
+  stroke ('white');
+  strokeWeight (1);
+ 
 }
 
-function setup () {
+function draw() {
+ 
+ 
 
-createCanvas(windowWidth, windowHeight); 
+var num = 10 //variable for number of squares
+var sideLen = windowWidth
 
+ 
+var sideLen = windowWidth/num; //var for sidelength each sqaure
+ 
+  for (var y = 0; y < windowHeight; y = y + sideLen) {   //loop for y direction
+   
+     for (var x = 0; x < windowWidth; x = x + sideLen )  { //loop x direction
+ 
+  quad (x,y,
+        x + sideLen,y,
+        x + sideLen, y + sideLen,
+        x,y + sideLen);
+   
+  }
+   
+   
+   
+   
+   
+  }
+ 
+ 
+ 
 
+ 
+   
+ 
+ 
+ 
+  noLoop();
 }
-
-function draw() { 
-
-
-background ('red');
-
-var num = 50;
-varsideLen = windowWidth/num;
-
-for (var y = 0; y < windowHeight; y = y + sideLen) {
-
-
-for  (var x = 0; x < windowHeight; x = x + sideLen) {
-image (gif, x, y, sideLen, sideLen);
-}
-}
-}
-
-function windowResized(){
-resizeCanvas (windowWidth, windowHeight); 
+function windowWidth (){
+  resizeCanvas (windowWidth,windowHeight);
 }
