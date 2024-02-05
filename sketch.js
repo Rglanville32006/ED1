@@ -1,21 +1,23 @@
 let gif;
 
 function preload (){
-gif = loadimage ('assets/Rowan.gif')
+gif = loadimage ('assets/Rowan.gif');
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  fill('grey');
+  fill('lightgrey');
   stroke ('white');
   strokeWeight (1);
  
 }
 
 function draw() {
+
+background ('255,255,255');
  
  
 
-var num = 10 //variable for number of squares
+var num = 8 //variable for number of squares
 var sideLen = windowWidth
 
  
@@ -25,11 +27,7 @@ var sideLen = windowWidth/num; //var for sidelength each sqaure
    
      for (var x = 0; x < 2 * windowWidth; x = x + sideLen )  { //loop x direction
  
-  quad (x,y,
-        x + sideLen,y,
-        x + sideLen, y + sideLen,
-        x,y + sideLen);
-   
+  image (gif,x,y,sideLen, sideLen) ;
   }
    
    
@@ -44,9 +42,9 @@ var sideLen = windowWidth/num; //var for sidelength each sqaure
  
    
  
+} 
  
- 
-  noLoop();
+  //noLoop();
 }
 function windowWidth (){
   resizeCanvas (windowWidth,windowHeight);
